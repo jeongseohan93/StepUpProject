@@ -1,0 +1,260 @@
+@charset "UTF-8";
+
+/* 전체 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 폰트 */
+@font-face {
+    font-family: 'JUA';
+    src: url("/resources/font/JUA.ttf") format('truetype');
+}
+
+body {
+    font-family: 'JUA', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #0B0C0D; /* 어두운 색상 */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 15px 15px 0 0;
+    padding: 0; /* 패딩 제거 */
+    background-color: transparent; /* 배경 투명 */
+    box-shadow: none; /* 그림자 제거 */
+}
+
+.footer-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'JUA', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    background-color: #0B0C0D;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+table {
+    width: 90%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background: #fff;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0B0C0D; /* 어두운 색상 */
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f4f4f4; /* 밝은 회색 */
+}
+
+a {
+    text-decoration: none;
+    color: #0B0C0D; /* 어두운 색상 */
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #555; /* 중간 회색 */
+}
+
+.button-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container input {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-family: 'JUA';
+    border: none;
+    border-radius: 30px;
+    background-color: #0B0C0D; /* 어두운 색상 */
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-container input:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.search-bar {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.search-bar select, .search-bar input {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar input[type="button"] {
+    background-color: #0B0C0D; /* 어두운 색상 */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar input[type="button"]:hover {
+    background-color: #333;
+}
+
+.page-menu {
+    text-align: center;
+    margin: 30px 0;
+    font-family: 'JUA', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-menu a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 8px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #555;
+    background-color: #f3f4f6;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.page-menu a:hover {
+    background-color: #0B0C0D;  /* 변경 */
+    color: white;  /* 변경 */
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(11, 12, 13, 0.2);  /* 변경 */
+}
+
+.page-menu .now {
+    background-color: #0B0C0D;  /* 변경 */
+    color: white !important;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(11, 12, 13, 0.2);  /* 변경 */
+}
+
+/* 화살표 스타일 */
+.page-menu .arrow {
+    position: relative;
+    background-color: white;
+    border: 2px solid #e2e4e9;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    color: transparent;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.page-menu .arrow:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #0B0C0D;  /* 변경 */
+    border-right: 2px solid #0B0C0D;  /* 변경 */
+    transition: all 0.3s ease;
+}
+
+.page-menu .prev:before {
+    left: 55%;
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.page-menu .next:before {
+    right: 55%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.page-menu .arrow:hover {
+    background-color: #0B0C0D;  /* 변경 */
+    border-color: #0B0C0D;  /* 변경 */
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(11, 12, 13, 0.2);  /* 변경 */
+}
+
+.page-menu .arrow:hover:before {
+    border-color: white;
+}
+
+.page-menu .disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: #f3f4f6;
+    border-color: #e2e4e9;
+}
+
+.page-menu .disabled:before {
+    border-color: #999;
+}
+
+/* 페이지 번호 사이의 간격 조정 */
+.page-menu a:not(.arrow) {
+    margin: 0 2px;
+}
+
+/* 현재 페이지 hover 효과 제거 */
+.page-menu .now:hover {
+    transform: none;
+    background-color: #0B0C0D;  /* 변경 */
+}
+.hidden {
+    display: none;
+}
+

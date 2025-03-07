@@ -1,0 +1,368 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+.title{
+	margin-top: 200px;
+	margin-left: 325px;
+	height: 100px;
+	display : flex;
+	align-items : center;
+}
+
+.m_title{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.title_line{
+	font-size: 50px;
+}
+
+.title_line1{
+	 margin-top: 30px;
+	 font-size: 20px;
+}
+
+.academy_box{
+	margin-left: 325px;
+	display: flex;
+	flex-direction: row;
+	gap : 5px;
+}
+
+.main_img{
+	width: 600px;
+	height: 600px;
+}
+
+.main1{
+	border-radius: 20px;
+}
+
+.sub_center{
+	display: flex;
+	flex-direction: column;
+	gap : 5px;
+}
+
+.sub_img{
+	width: 674px;
+	height: 300px;
+}
+
+.instructor_member {
+	margin-left: 325px;
+	margin-right: 325px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 48px;
+}
+
+.instructor_label{
+	margin-top: 40px;
+	margin-left: 325px;
+}
+
+.map_title{
+	margin-top: 20px;
+	margin-right: 325px;
+	margin-left: 325px;
+}
+
+.academy_map{
+	height: 500px;
+	margin-top: 40px;
+	margin-bottom: 0;
+
+}
+
+.c_title{
+	margin-top: 50px;
+	margin-left: 325px;
+	height: 1000px;
+	margin-bottom: 50px;
+}
+
+.instructor_box{
+	margin-top: 40px;
+	width: 270px;
+	height: 220px;
+	border : 1px #ccc solid;
+	border-radius: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+	margin-bottom: 30px;
+}
+
+.instructor_intro{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.instructor_img{
+	border-radius: 60px;
+}
+
+.intro{
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.inner_border{
+	margin-top: 40px;
+	width: 1275px;
+}
+
+
+.border{
+	margin-left: 325px;
+	margin-right: 325px;
+
+}
+
+.location{
+	margin-top: 40px;
+	margin-bottom: 15px;
+}
+
+.evaluation{
+	margin-left: 325px;
+	margin-right: 325px;
+	margin-top: 20px;
+	height: 950px;
+	display: flex;
+	flex-direction: column;
+}
+
+.ratting{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 50px;
+	gap : 10px;
+}
+
+.review_box{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	gap: 20px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+
+}
+
+.box23{
+	width: 590px;
+	height: 230px;
+	padding-left: 20px;
+	padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.academy_schedule{
+	margin-top: 20px;
+	height: 800px;
+}
+
+table {
+	margin-top: 20px;
+	width: 100%;
+	max-width: 1275px;
+	border-collapse: collapse;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: #444444;
+}
+
+th, td {
+	padding: 12px 15px;
+	text-align: center;
+	border: 1px solid #666666;
+	font-weight: 600;
+	border-radius: 8px;
+	transition: background-color 0.3s ease;
+}
+
+th {
+	background-color: #555555;
+	color: #000000; /* 글씨 색을 검정으로 변경 */
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #2d2d2d; /* 더 진한 회색 */
+}
+
+tbody tr:nth-child(even) {
+	background-color: #3c3c3c; /* 조금 더 진한 회색 */
+}
+
+tbody tr:hover {
+	background-color: #666666;
+	transition: background-color 0.3s ease;
+}
+
+.time-column {
+	width: 15%;
+	font-weight: 700;
+	font-size: 1.2rem;
+	background-color: #444444; /* 조금 더 진한 회색 */
+	color: #FFF; /* 글씨 색을 검정으로 변경 */
+}
+
+.day-column {
+	width: 14%;
+	color: #FFF; /* 글씨 색을 검정으로 변경 */
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+td {
+	font-size: 1rem;
+	color: #FFF; /* 글씨 색을 검정으로 변경 */
+	font-weight: 600;
+}
+
+td c {
+	color: #999999;
+	font-size: 0.9rem;
+}
+
+/* 격자무늬 효과 */
+tbody tr:nth-child(odd) td:nth-child(odd), tbody tr:nth-child(even) td:nth-child(even)
+{
+	background-color: #666666; /* 짙은 회색 */
+}
+
+tbody tr:nth-child(odd) td:nth-child(even), tbody tr:nth-child(even) td:nth-child(odd)
+{
+	background-color: #777777; /* 조금 밝은 회색 */
+}
+
+/* Hover 효과로 가로세로 셀 색상 밝히기 */
+tbody td:hover {
+	background-color: #888888 !important; /* 더 밝은 색으로 변경 */
+}
+
+tbody tr:hover td {
+	background-color: #888888 !important; /* 전체 셀에 대해 밝은 색 적용 */
+}
+
+thead th:first-child {
+	border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+	border-top-right-radius: 10px;
+}
+
+tbody tr:last-child td:first-child {
+	border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+	border-bottom-right-radius: 10px;
+}
+
+.plus_button{
+	width: 100px;
+	height: 45px;
+	background-color: white;
+	border-radius: 20px;
+}
+
+.profile{
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	align-items: center;
+}
+
+.profile_name{
+	display: flex;
+	flex-direction: column;
+}
+
+.review_box_main{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 100%;
+}
+
+.academy_person{
+	width: 300px;
+	height: 220px;
+	border : 1px #ccc solid;
+	border-radius: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.main_academy_information{
+	margin-left: 325px;
+	margin-right: 325px;
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.academy_information{
+	display: flex;
+	flex-direction: row;
+	gap: 60px;
+}
+
+.sub_academy_information{
+	height: 220px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+}
+
+.plus_window{
+	display: none;
+	position: absolute;
+	top: 3000px;
+	z-index:1000;
+	width: 1100px;
+	height: 800px;
+	left:425px;
+	border : 1px #000000 solid;
+	background-color: #ffffff;
+	overflow: scroll;
+
+}
+
+.review_button{
+	width: 180px;
+	margin-bottom: 10px;
+	height: 90px;
+	border-radius: 40px;
+	background-color: black;
+	color: white;
+}
+

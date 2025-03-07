@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cart">
+	<select id="selectCart" parameterType="String" resultType="cartVO">
+
+		select * from cart_view
+		where stepup_id = #{stepup_id}
+
+	</select>
+
+	<select id = "selectAll" parameterType="cartVO" resultType="int">
+		SELECT SUM(quantity) AS res
+		FROM cart
+		WHERE stepup_id = #{stepup_id} AND schedule_idx = #{schedule_idx}
+	</select>
+
+	<update id="updateCartQuantity" parameterType="cartVO">
+		UPDATE cart
+		SET quantity = #{quantity}
+		WHERE stepup_id = #{stepup_id}
+		  AND schedule_idx = #{schedule_idx}
+	</update>
+
+	<update id="updateCart" parameterType="cartVO">
+		UPDATE cart
+		SET quantity = quantity + 1
+		WHERE stepup_id = #{stepup_id}
+		  AND schedule_idx = #{schedule_idx}
+	</update>
+
+	<insert id="insertCart" parameterType="cartVO">
+		insert into cart values(
+								   null,
+								   #{schedule_idx},
+								   CURRENT_TIMESTAMP,
+								   1,
+								   #{stepup_id},
+								   #{instructor_idx}
+							   )
+
+	</insert>
+
+	<delete id = "deleteCart" parameterType="int">
+		delete from cart
+		 where cart_idx = #{cart_idx}
+
+	</delete>
+
+	<select id="cart_out" parameterType="int" resultType="cartVO">
+		SELECT * FROM cart_view where cart_idx = #{cart_idx}
+	</select>
+
+	<insert id = "insertCurse" parameterType="cartVO">
+		insert into curse values (
+		             null,
+		            #{stepup_id},
+		            #{schedule_idx},
+		            #{stepup_name},
+					 CURRENT_TIMESTAMP,
+		            #{subject},
+		            #{school_type},
+		            #{total_price},
+		            #{quantity},
+		            #{instructor_idx}
+								 )
+
+	</insert>
+
+</mapper>
+
+
+
+
+
+
+
+

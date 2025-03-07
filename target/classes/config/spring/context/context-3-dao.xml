@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://mybatis.org/schema/mybatis http://mybatis.org/schema/mybatis-spring.xsd">
+
+
+
+	<bean id="academyDaoBean" class="dao.AcademyDao">
+		<property name="sqlSession" ref="sqlSessionBean" />
+	</bean>
+
+	<bean id="scheduleDaoBean" class="dao.ScheduleDao">
+		<property name="sqlSession" ref="sqlSessionBean" />
+	</bean>
+
+	<bean id="instructorDaoBean" class="dao.InstructorDao">
+		<property name="sqlSession" ref="sqlSessionBean" />
+	</bean>
+
+	<bean id="loginDaoBean" class="dao.LoginDao">
+		<property name="sqlSession" ref="sqlSessionBean" />
+	</bean>
+
+	<bean id="boardDaoBean" class="dao.BoardDao">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+
+	<bean id="commentDaoBean" class="dao.CommentDao">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+
+	<bean id="memberjoinDaoBean" class="dao.MemberJoinDao">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+
+	<bean id="cartDaoBean" class="dao.CartDao">
+		<property name="sqlSession" ref="sqlSessionBean"/>
+	</bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

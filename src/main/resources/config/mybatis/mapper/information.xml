@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="information">
+
+    <select id="academySelect" parameterType="String" resultType="academyVO">
+
+        select *
+        from academy
+        where academy_id = #{id}
+
+    </select>
+
+    <select id="instructorSelect" parameterType="String" resultType="instructorVO">
+
+        select *
+        from instructor_member
+        where instructor_id = #{id}
+
+    </select>
+
+    <select id="stepupSelect" parameterType="String" resultType="stepupmemberVO">
+
+        select *
+        from stepup_member
+        where stepup_id = #{id}
+
+    </select>
+
+</mapper>
+	
+
+
+
+
+
+
+

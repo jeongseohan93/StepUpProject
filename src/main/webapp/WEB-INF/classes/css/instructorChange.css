@@ -1,0 +1,84 @@
+/* 전체 기본 스타일 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 컨테이너 스타일 */
+.instructorPage {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+.instructorTopic {
+    margin-top: 150px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 개별 섹션 스타일 */
+.instructorSmallTopic {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+/* 입력 필드 컨테이너 */
+.inputBox {
+    margin-top: 5px;
+}
+
+/* 입력 필드 스타일 */
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+.inputBox input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+
+/* 수정 버튼 스타일 */
+.editButton {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.editButton:hover {
+    background: #0056b3;
+}
+
+

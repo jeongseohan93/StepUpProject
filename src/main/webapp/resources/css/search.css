@@ -1,0 +1,56 @@
+/* 검색 결과와 지도를 감싸는 컨테이너 */
+.searchResult {
+    margin-top: 220px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* 상단 정렬 */
+    gap: 20px;
+}
+
+/* 검색 결과 컨테이너 */
+.searchResultAcademy {
+    margin-left: 50px;
+    width: 50%; /* 검색 결과 영역이 더 넓게 설정 */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 개별 학원 정보 카드 */
+.academyContent {
+    padding: 8px;
+    width: 280px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+/* 학원 이미지 */
+.academyImg {
+    border-radius: 40px;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+/* 지도 컨테이너 */
+.sideBar {
+    flex: 1;
+    position: sticky;
+    top: 10px; /* 스크롤을 따라 내려오게 설정 */
+    height: fit-content; /* 내용에 맞게 크기 조정 */
+    max-height: calc(100vh - 20px); /* 화면 높이를 초과하지 않도록 제한 */
+}
+
+/* 지도 스타일 */
+#map {
+    width: 100%;
+    height: 850px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+

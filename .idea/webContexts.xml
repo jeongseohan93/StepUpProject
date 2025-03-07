@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Page/loginPage/selectJoinPage.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Page/loginPage" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Page/myInformation/memberInformation/memberCurseList.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Page/myInformation/memberInformation" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Page/myInformation/memberInformation/memberEdit.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Page/myInformation/memberInformation" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Page/profilePage/instructorProfile.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Page/profilePage" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/academy_detail/academy_detail.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/academy_detail" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login/academy_information.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/lecture_list.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/stepup_academy_detail_content.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main" />
+      </map>
+    </option>
+  </component>
+</project>

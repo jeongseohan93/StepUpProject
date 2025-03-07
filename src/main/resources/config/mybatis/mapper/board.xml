@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="b">
+
+    <select id="board_list" parameterType="java.util.Map" resultType="boardVO">
+        SELECT
+        board_idx,
+        board_name,
+        board_subject,
+        board_content,
+        board_ip,
+        DATE_FORMAT(board_regdate, '%Y-%m-%d %H:%i') as board_regdate,
+        board_readhit,
+        board_del_info
+        FROM board
+        WHERE board_del_info != -1
+        <choose>
+            <when test="search == 'all'">
+                <!-- 전체 검색일 경우 추가 조건 없음 -->
+            </when>
+            <when test="search == 'board_name' and search_text != null and search_text != ''">
+                AND board_name LIKE CONCAT('%', #{search_text}, '%')
+            </when>
+            <when test="search == 'board_subject' and search_text != null and search_text != ''">
+                AND board_subject LIKE CONCAT('%', #{search_text}, '%')
+            </when>
+            <when test="search == 'board_content' and search_text != null and search_text != ''">
+                AND board_content LIKE CONCAT('%', #{search_text}, '%')
+            </when>
+        </choose>
+        ORDER BY board_idx DESC
+        LIMIT #{start}, #{count}
+    </select>
+
+    <!-- 새 글 작성 -->
+    <insert id="board_insert" parameterType="boardVO">
+        INSERT INTO board (
+            board_idx,
+            board_name,
+            board_subject,
+            board_content,
+            board_ip,
+            board_regdate,
+            board_readhit,
+            board_del_info
+        ) VALUES (
+                     NULL,
+                     #{board_name},
+                     #{board_subject},
+                     #{board_content},
+                     #{board_ip},
+                     NOW(),
+                     0,
+                     0
+                 )
+    </insert>
+
+    <!-- 상세보기를 위해 게시글 한 건 조회 -->
+    <select id="board_one" parameterType="int" resultType="boardVO">
+        SELECT * FROM board WHERE board_idx = #{board_idx}
+    </select>
+
+    <!-- 게시글 수정 -->
+    <update id="board_update" parameterType="boardVO">
+        UPDATE board
+        SET board_name = #{board_name},
+            board_subject = #{board_subject},
+            board_content = #{board_content},
+            board_ip = #{board_ip}
+        WHERE board_idx = #{board_idx}
+    </update>
+
+    <!-- 조회수 증가 -->
+    <update id="board_update_readhit" parameterType="int">
+        UPDATE board
+        SET board_readhit = board_readhit + 1
+        WHERE board_idx = #{board_idx}
+    </update>
+
+    <!-- 삭제된 것처럼 수정 -->
+    <update id="board_del_update" parameterType="int">
+        UPDATE board
+        SET board_del_info = -1
+        WHERE board_idx = #{board_idx}
+    </update>
+
+    <!-- 전체 게시글 수 -->
+    <select id="board_count" resultType="int" parameterType="java.util.Map">
+        SELECT COUNT(*) FROM board
+        WHERE board_del_info != -1
+        <choose>
+            <when test="search == 'all'">
+                <!-- 전체 검색일 경우 추가 조건 없음 -->
+            </when>
+            <when test="search == 'board_name' and search_text != null and search_text != ''">
+                AND board_name LIKE CONCAT('%', #{search_text}, '%')
+            </when>
+            <when test="search == 'board_subject' and search_text != null and search_text != ''">
+                AND board_subject LIKE CONCAT('%', #{search_text}, '%')
+            </when>
+            <when test="search == 'board_content' and search_text != null and search_text != ''">
+                AND board_content LIKE CONCAT('%', #{search_text}, '%')
+            </when>
+        </choose>
+    </select>
+
+</mapper>

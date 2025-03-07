@@ -1,0 +1,183 @@
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 페이지 전체 배경 */
+.join {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f4f7f9; /* 부드러운 배경 */
+    padding: 20px;
+}
+
+/* 로그인 폼 컨테이너 */
+.login_form_top {
+    width: 500px;
+    max-width: 90%;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+/* 제목 스타일 */
+h1 {
+    text-align: center;
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 로고 스타일 */
+.logoicon {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo_img {
+    width: 150px;
+    height: auto;
+}
+
+/* 입력 필드 스타일 */
+.academy_input,
+.academy_input_email {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #f9f9f9;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+.academy_input:focus,
+.academy_input_email:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    background: #fff;
+}
+
+/* 입력 그룹 (박스) */
+.infor_box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px; /* 입력 필드 간격 추가 */
+}
+
+/* 라벨 스타일 */
+.infor_label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 버튼 디자인 */
+.button_design,
+.address_search {
+    padding: 12px 15px;
+    font-size: 16px;
+    color: white;
+    background: #3498db;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    width: 120px;
+}
+
+.button_design:hover,
+.address_search:hover {
+    background: #2980b9;
+}
+
+/* 본인인증 박스 */
+.infor_box_email {
+    margin-bottom: 25px; /* 공간 추가 */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.infor_email {
+    display: flex;
+    gap: 10px;
+}
+
+/* 카테고리 선택 */
+.academy_input select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* 주소 검색 & 인증번호 입력 박스 */
+.infor_box_id,
+.address_search_con {
+    display: flex;
+    gap: 10px;
+}
+
+#check_input {
+    flex: 2;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #eee;
+}
+
+/* 학원 이미지 입력 */
+.infor_box_profile {
+    margin-bottom: 30px; /* 회원가입 버튼과 간격 추가 */
+}
+
+/* 회원가입 버튼 */
+.joinButton {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 30px; /* 더 아래로 이동 */
+}
+
+.joinButton:hover {
+    background: #27ae60;
+}
+
+/* 반응형 조정 */
+@media (max-width: 480px) {
+    .login_form_top {
+        width: 95%;
+    }
+
+    .infor_box_id,
+    .address_search_con {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .button_design,
+    .address_search {
+        width: 100%;
+    }
+}

@@ -1,0 +1,87 @@
+/* 전체 기본 스타일 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.academy_label{
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+
+
+/* 수정 폼 컨테이너 */
+#stepup_mod {
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 폼 내부 라벨 */
+#stepup_mod label {
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+    margin-top: 15px;
+}
+
+/* 입력 필드 스타일 */
+#stepup_mod input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+#stepup_mod input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* 버튼 스타일 */
+#stepup_mod button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+#stepup_mod button:hover {
+    background: #0056b3;
+}
+
+/* 반응형 처리 */
+@media screen and (max-width: 768px) {
+    #stepup_mod {
+        width: 95%;
+        padding: 20px;
+    }
+
+    #stepup_mod input {
+        font-size: 0.9rem;
+    }
+}

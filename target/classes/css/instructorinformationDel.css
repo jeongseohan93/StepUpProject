@@ -1,0 +1,124 @@
+/* 전체 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* 메인 컨테이너 */
+.bigMainBox {
+    margin-top: 120px;
+    margin-bottom: 50px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 내용 컨테이너 */
+.content_box {
+    width: 100%;
+    max-width: 1000px;
+    text-align: left; /* 왼쪽 정렬 */
+}
+
+/* 서브 제목 (강사명) */
+h1 {
+    font-size: 22px;
+    font-weight: 1000;
+    color: #555;
+    text-align: center;
+}
+
+.text{
+    font-size: 15px;
+    text-align: left;
+}
+
+/* 강의 리스트 컨테이너 */
+.main_box {
+    width: 100%;
+    max-width: 1000px;
+    height: 700px;
+    padding: 30px;
+    overflow: auto;
+}
+
+/* 강사 정보 컨테이너 (가로 정렬) */
+.instructorInforBox {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+
+/* 강의 정보 박스 */
+.inforBox {
+    display: flex;
+    align-items: center; /* 수직 정렬 */
+    justify-content: space-between; /* 양쪽 정렬 */
+    width: 280px;
+    height: 150px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.08);
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 텍스트 컨테이너 */
+.info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+
+/* 호버 효과 */
+.inforBox:hover {
+    background: #f9f9f9;
+    transform: translateY(-5px);
+    box-shadow: 2px 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* 클릭 효과 */
+.inforBox:active {
+    transform: translateY(0);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+.inforBox2{
+    width: 200px;
+    height: 60px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #444;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.inforBox2:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-5px);
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.1);
+}
+

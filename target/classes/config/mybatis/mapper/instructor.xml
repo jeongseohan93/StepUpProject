@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="instructor">
+
+	<select id="academyInstructor" resultType="instructorVO" parameterType="int" >
+
+		select * from instructor_member where academy_idx = #{academy_idx}
+
+	</select>
+
+	<select id="academySelect" resultType="academyVO" parameterType="int">
+
+		SELECT a.academy_name, a.academy_idx
+		FROM academy AS a
+				 INNER JOIN instructor_member AS im
+							ON a.academy_idx = im.academy_idx
+		WHERE im.instructor_idx = #{instructor_idx};
+
+
+	</select>
+
+	<select id = "instructorSelectOne" parameterType="int" resultType="instructorVO">
+
+		select * from instructor_member
+			where instructor_idx = #{instructor_idx}
+
+	</select>
+
+	<select id = "academySelectAll" parameterType="int" resultType="instructorVO">
+
+		select * from instructor_member
+		where academy_idx = #{academy_idx}
+	</select>
+
+	<update id = "updInstructor" parameterType = "vo.InstructorVO">
+		UPDATE instructor_member
+		SET
+			instructor_nickname = #{instructor_nickname},
+			instructor_pwd = #{instructor_pwd},
+			instructor_email = #{instructor_email},
+			instructor_address = #{instructor_address},
+			instructor_phone = #{instructor_phone},
+			instructor_category = #{instructor_category},
+			instructor_sub = #{instructor_sub}
+		WHERE instructor_idx = #{instructor_idx}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+

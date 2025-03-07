@@ -1,0 +1,233 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 전체 컨테이너 */
+.content-container {
+    width: 80%;
+    margin: 0 auto;
+    margin-top : 150px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 강사 정보 박스 */
+.instructor-container {
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+    gap: 20px;
+}
+
+.instructor-profile {
+    width: 320px; /* 기존보다 약간 줄임 */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* 높이를 줄이기 위해 padding 감소 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.instructor-review2{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    gap: 6px;
+}
+
+.instructor-profile:hover {
+    transform: translateY(-5px);
+}
+
+.instructor-img {
+    width: 80%; /* 기존 100%에서 약간 줄임 */
+    height: 80%;
+    border-radius: 50%;
+    margin-bottom: 10px; /* 여백 감소 */
+}
+
+.instructor-info {
+    font-size: 17px; /* 기존 18px에서 조금 줄임 */
+    font-weight: bold;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* 간격 조정 */
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+/* 강사 소개 */
+.instructor-description {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.lecture-list {
+    border: 1px solid #ddd; /* 박스 테두리 */
+    background: #fff; /* 흰색 배경 */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+
+
+/* 강의 리스트 */
+.lecture-list h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.lecture-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.lecture-card {
+    width: 49%;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.lecture-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lecture-info p {
+    font-size: 17px;
+    color: #555;
+}
+
+.price {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+/* 버튼 스타일 */
+.lecture-buttons {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    font-size: 16px;
+    width: 60%;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.buy-btn {
+    background: #28a745;
+}
+
+.buy-btn:hover {
+    background: #218838;
+}
+
+/* 후기 섹션 */
+.review-section {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+.instructor-review{
+    display: flex;
+    flex-direction: column;
+}
+
+.review-box {
+    padding-left: 40px;
+    margin-top: 40px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.box23{
+    width: 590px;
+    height: 230px;
+    padding-left: 20px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+
+
+.profile_name{
+    display: flex;
+    flex-direction: column;
+}
+
+.bannerBigImg{
+    width: 100%;
+    height: 100%;
+}

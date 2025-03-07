@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="join">
+
+    <insert id="academyInsert" parameterType="academyVO">
+        INSERT INTO academy
+        VALUES (null,
+                #{academy_id},
+                #{academy_pwd},
+                #{academy_name},
+                #{academy_phone},
+                #{academy_content},
+                #{academy_bus_num},
+                #{academy_address},
+                #{academy_latitude},
+                #{academy_longitude},
+                #{academy_category},
+                #{academy_sub},
+                #{academy_region},
+                null,
+                #{academy_email},
+                #{academy_profile})
+    </insert>
+
+    <insert id="instructorInsert" parameterType="instructorVO">
+        INSERT INTO instructor_member
+        VALUES (
+                null,
+                #{instructor_id},
+                #{instructor_pwd},
+                #{instructor_name},
+                #{instructor_email},
+                #{instructor_address},
+                #{instructor_gender},
+                #{instructor_birthday},
+                #{instructor_nickname},
+                #{instructor_phone},
+                #{instructor_sub},
+                #{instructor_category},
+                null,
+                #{instructor_profile},
+                null,
+                null
+               )
+    </insert>
+
+    <insert id="memberInsert" parameterType="stepupmemberVO">
+        INSERT INTO stepup_member
+        VALUES (null,
+                #{stepup_id},
+                #{stepup_pwd},
+                #{stepup_name},
+                #{stepup_email},
+                #{stepup_address},
+                #{stepup_gender},
+                #{stepup_birthday},
+                #{stepup_nickname},
+                #{stepup_phone},
+                #{stepup_profile})
+    </insert>
+
+    <select id="stepupIdCheck" parameterType="String" resultType="int">
+        SELECT COUNT(*) AS total_count
+        FROM (SELECT academy_id AS id
+              FROM academy
+              WHERE academy_id = #{stepup_id}
+
+              UNION
+
+              SELECT stepup_id AS id
+              FROM stepup_member
+              WHERE stepup_id = #{stepup_id}
+
+              UNION
+
+              SELECT instructor_id AS id
+              FROM instructor_member
+              WHERE instructor_id = #{stepup_id}) AS combined;
+    </select>
+
+    <select id="academyIdCheck" parameterType="String" resultType="int">
+        SELECT COUNT(*) AS total_count
+        FROM (SELECT academy_id AS id
+              FROM academy
+              WHERE academy_id = #{academy_id}
+
+              UNION
+
+              SELECT stepup_id AS id
+              FROM stepup_member
+              WHERE stepup_id = #{academy_id}
+
+              UNION
+
+              SELECT instructor_id AS id
+              FROM instructor_member
+              WHERE instructor_id = #{academy_id}) AS combined;
+    </select>
+
+    <select id="instructorIdCheck" parameterType="String" resultType="int">
+        SELECT COUNT(*) AS total_count
+        FROM (SELECT academy_id AS id
+              FROM academy
+              WHERE academy_id = #{instructor_id}
+
+              UNION
+
+              SELECT stepup_id AS id
+              FROM stepup_member
+              WHERE stepup_id = #{instructor_id}
+
+              UNION
+
+              SELECT instructor_id AS id
+              FROM instructor_member
+              WHERE instructor_id = #{instructor_id}) AS combined;
+    </select>
+
+
+</mapper>
+	
+
+
+
+
+
+
+

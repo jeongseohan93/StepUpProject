@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main_content{
+    margin-top: 200px;
+    margin-bottom: 340px;
+    width: 100%;
+
+}
+
+.text{
+    font-size: 15px;
+
+}
+
+#resume_page {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 100px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#resume_page h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#resume_page label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+#resume_page select,
+#resume_page textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+#resume_page textarea {
+    resize: vertical;
+}
+
+#resume_page button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+#resume_page button:hover {
+    background-color: #0056b3;
+}

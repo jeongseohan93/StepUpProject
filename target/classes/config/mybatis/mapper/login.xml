@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="login">
+
+    <select id="loginDate" parameterType="String" resultType="loginvo">
+
+        SELECT 'academy'       AS userType,
+               academy_id      AS id,
+               academy_pwd     AS password,
+               academy_profile AS profile,
+               academy_idx     AS idx
+        FROM academy
+        WHERE academy_id = #{stepup_id}
+
+        UNION ALL
+
+        SELECT 'stepup'       AS userType,
+               stepup_id      AS id,
+               stepup_pwd     AS password,
+               stepup_profile AS profile,
+               stepup_idx     AS idx
+        FROM stepup_member
+        WHERE stepup_id = #{stepup_id}
+
+        UNION ALL
+
+        SELECT 'instructor'       AS userType,
+               instructor_id      AS id,
+               instructor_pwd     AS password,
+               instructor_profile AS profile,
+               instructor_idx     AS idx
+        FROM instructor_member
+        WHERE instructor_id = #{stepup_id}
+
+    </select>
+
+    <select id="InstructorSelect" parameterType="String" resultType="instructorVO">
+
+        select *
+        from instructor_member
+        where instructor_id = #{id}
+
+    </select>
+
+    <select id="selectMemberById" resultType="stepupmemberVO" parameterType="String">
+        SELECT * FROM stepup_member WHERE stepup_id = #{stepup_id}
+    </select>
+
+    <select id = "selectCurseList" parameterType="String" resultType="curseVO">
+        select * from curse where stepup_id = #{stepup_id}
+    </select>
+
+    <select id = "idFind" parameterType="java.util.Map" resultType="loginvo">
+        SELECT 'academy'       AS userType,
+               academy_id      AS id
+        FROM academy
+        WHERE academy_name = #{name}
+          and academy_email = #{email}
+
+        UNION ALL
+
+        SELECT 'stepup'       AS userType,
+               stepup_id      AS id
+        FROM stepup_member
+        WHERE stepup_name = #{name}
+          and stepup_email = #{email}
+
+        UNION ALL
+
+        SELECT 'instructor'       AS userType,
+               instructor_id      AS id
+
+        FROM instructor_member
+        WHERE instructor_name = #{name}
+          and instructor_email = #{email}
+    </select>
+
+    <select id = "pwdFind" parameterType="java.util.Map" resultType="loginvo">
+        SELECT 'academy'       AS userType,
+               academy_id      AS id,
+               academy_pwd     AS pwd
+        FROM academy
+        WHERE academy_id = #{id}
+          and academy_email = #{email}
+
+        UNION ALL
+
+        SELECT 'stepup'       AS userType,
+               stepup_id      AS id,
+               stepup_pwd     AS pwd
+        FROM stepup_member
+        WHERE stepup_id = #{id}
+          and stepup_email = #{email}
+
+        UNION ALL
+
+        SELECT 'instructor'       AS userType,
+               instructor_id      AS id,
+               instructor_pwd     AS pwd
+        FROM instructor_member
+        WHERE instructor_id = #{id}
+          and instructor_email = #{email}
+    </select>
+
+    <update id = "academyPwdC" parameterType="loginvo">
+        update academy
+        set academy_pwd = #{password}
+        where academy_id = #{id}
+    </update>
+
+    <update id = "academyPwdI" parameterType="loginvo">
+        update instructor_member
+        set instructor_pwd = #{password}
+        where instructor_id = #{id}
+    </update>
+
+    <update id = "academyPwdS" parameterType="loginvo">
+        update stepup_member
+        set stepup_pwd = #{password}
+        where stepup_id = #{id}
+    </update>
+
+    <update id="updateMember" parameterType="vo.StepupMemberVO">
+        UPDATE stepup_member
+        SET
+            stepup_pwd = #{stepup_pwd},
+            stepup_email = #{stepup_email},
+            stepup_address = #{stepup_address},
+            stepup_birthday = #{stepup_birthday},
+            stepup_nickname = #{stepup_nickname},
+            stepup_phone = #{stepup_phone}
+        WHERE stepup_id = #{stepup_id}
+    </update>
+
+
+
+
+</mapper>
+	
+
+
+
+
+
+
+

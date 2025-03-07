@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="schedule">
+
+    <select id="academySchedules" resultType="scheduleVO" parameterType="int">
+        SELECT
+        s.schedule_idx,
+        s.instructor_idx,
+        s.time_slot,
+        s.day_of_week,
+        s.grade_level,
+        s.school_type,
+        s.subject,
+        a.academy_name,  <!-- academy 테이블의 academy_name 필드 가져오기 -->
+        s.academy_idx
+        FROM schedule s
+        JOIN academy a ON s.academy_idx = a.academy_idx  <!-- academy_idx로 조인 -->
+        WHERE s.academy_idx = #{academy_idx}
+        ORDER BY FIELD(s.day_of_week, '월', '화', '수', '목', '금', '토'), s.time_slot;
+    </select>
+
+    <select id="viewSchedules" resultType="scheduleVO" parameterType="int">
+        SELECT
+        s.schedule_idx,
+        s.instructor_idx,
+        s.instructor_name,
+        s.time_slot,
+        s.day_of_week,
+        s.grade_level,
+        s.school_type,
+        s.subject,
+        a.academy_name,  <!-- academy 테이블의 academy_name 필드 가져오기 -->
+        s.academy_idx,
+        s.price
+        FROM schedule s
+        JOIN academy a ON s.academy_idx = a.academy_idx  <!-- academy_idx로 조인 -->
+        WHERE s.instructor_idx = #{instructor_idx}
+        ORDER BY FIELD(s.day_of_week, '월', '화', '수', '목', '금', '토'), s.time_slot;
+
+    </select>
+
+    <delete id="deleteSchedule" parameterType="int">
+
+        DELETE
+        FROM schedule
+        WHERE schedule_idx = #{schedule_idx}
+
+    </delete>
+
+    <insert id="insertSchedule" parameterType="scheduleVO">
+        INSERT INTO schedule VALUES
+                (null,
+                #{instructor_idx},
+				#{instructor_name},
+                #{time_slot},
+                #{day_of_week},
+                #{grade_level},
+                #{school_type},
+                #{subject},
+                #{academy_idx},
+                #{price})
+    </insert>
+
+</mapper>
+
+
+
+
+
+
+
+

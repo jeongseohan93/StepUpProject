@@ -1,0 +1,157 @@
+/* 기본 설정 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 전체 컨테이너 */
+.login_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: #f4f7f9;
+	padding: 20px;
+}
+
+/* 로고 스타일 */
+.logoicon {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px; /* 로그인 폼과 간격 추가 */
+}
+
+.logo-img {
+	width: 150px;
+	height: auto;
+}
+
+/* 로그인 폼 컨테이너 */
+.login_form {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.login_form_top {
+	width: 450px;
+	padding: 30px;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+/* 입력 필드 스타일 */
+.input_form,
+.input_form23 {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 16px;
+	outline: none;
+	transition: 0.3s ease-in-out;
+}
+
+.input_form:focus,
+.input_form23:focus {
+	border-color: #3498db;
+	box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* 정보 입력 박스 */
+.infor_box {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 15px;
+}
+
+/* 라벨 스타일 */
+.infor_label {
+	text-align: left;
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+}
+
+/* 버튼 디자인 */
+.button_design {
+	padding: 10px 15px;
+	font-size: 14px;
+	color: white;
+	background: #3498db;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+.button_design:hover {
+	background: #2980b9;
+}
+
+/* 회원가입 버튼 */
+.joinButton {
+	margin-top: 20px;
+	width: 100%;
+	padding: 12px;
+	font-size: 18px;
+	background: #2ecc71;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+.joinButton:hover {
+	background: #27ae60;
+}
+
+/* 성별 선택 버튼 */
+.infor_box_gender {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.infor_box_gender .button_design {
+	flex: 1;
+}
+
+/* 주소 검색 & 인증번호 입력 박스 */
+.infor_box_id {
+	display: flex;
+	gap: 10px;
+}
+
+/* 인증번호 입력 필드 */
+#check_input {
+	flex: 2;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 16px;
+	background: #eee;
+}
+
+/* 반응형 조정 */
+@media (max-width: 480px) {
+	.login_form_top {
+		width: 90%;
+	}
+
+	.infor_box_id {
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.logo-img {
+		width: 120px; /* 모바일에서 로고 크기 축소 */
+	}
+}
